@@ -13,6 +13,10 @@ int main()
     Vvod_Koordinat_triangle(&t);
 
     print_cirlce(&c, f);
+    float P, S;
+    P = perimeter_circle(&c);
+    S = area_circle(&c);
+    print_P_S_circle(&c, P, S, f);
 
     print_triangle(&t, f);
 
