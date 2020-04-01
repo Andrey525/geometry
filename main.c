@@ -19,6 +19,9 @@ int main()
     print_P_S_circle(&c, P, S, f);
 
     print_triangle(&t, f);
+    P = perimeter_triangle(&t);
+    S = area_triangle(&t);
+    print_P_S_triangle(&t, P, S, f);
 
     fclose(f);
     printf("\n");
