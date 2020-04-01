@@ -20,3 +20,6 @@ void print_triangle(Triangle* t, FILE* f);
 float area_circle(Circle* c);
 float perimeter_circle(Circle* c);
 void print_P_S_circle(Circle* c, float P, float S, FILE* f);
+float perimeter_triangle(Triangle* t);
+float area_triangle(Triangle* t);
+void print_P_S_triangle(Triangle* t, float P, float S, FILE* f);
