@@ -5,3 +5,6 @@
 !*.c
 !Makefile
 !*.h
+!bin
+!build
+!src
