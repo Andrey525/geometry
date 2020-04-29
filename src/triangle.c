@@ -69,14 +69,8 @@ float area_triangle(Triangle* t)
 
 void print_P_S_triangle(Triangle* t, float P, float S, FILE* f)
 {
-    float a, b, c;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x)) + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x)) + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x)) + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
-    if ((((a + b) > c) && ((a + c) > b) && ((b + c) > a))) {
-        fprintf(f, "Perimeter of triangle: %.2f\n", P);
-        printf("Perimeter of triangle: %.2f\n", P);
-        fprintf(f, "Area of triangle: %.2f\n", S);
-        printf("Area of triangle: %.2f\n", S);
-    }
+    fprintf(f, "Perimeter of triangle: %.2f\n", P);
+    printf("Perimeter of triangle: %.2f\n", P);
+    fprintf(f, "Area of triangle: %.2f\n", S);
+    printf("Area of triangle: %.2f\n", S);
 }
