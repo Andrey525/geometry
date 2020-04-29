@@ -32,7 +32,7 @@ int main()
         print_P_S_triangle(&t, P, S, f);
     }
 
-    top_in_circle(&t, &c);
+    top_in_circle(&t, &c, f);
 
     fclose(f);
     printf("\n");
