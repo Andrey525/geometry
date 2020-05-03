@@ -10,3 +10,5 @@
 !src
 !.gitkeep
 !.travis.yml
+!test
+!thirdparty
