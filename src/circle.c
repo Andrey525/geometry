@@ -24,12 +24,10 @@ void print_cirlce(Circle* c, FILE* f)
 
 void print_P_S_circle(Circle* c, float P, float S, FILE* f)
 {
-    if (c->R > 0) {
-        fprintf(f, "Perimeter of circle: %.2f\n", P);
-        printf("Perimeter of circle: %.2f\n", P);
-        fprintf(f, "Area of circle: %.2f\n", S);
-        printf("Area of circle: %.2f\n", S);
-    }
+    fprintf(f, "Perimeter of circle: %.2f\n", P);
+    printf("Perimeter of circle: %.2f\n", P);
+    fprintf(f, "Area of circle: %.2f\n", S);
+    printf("Area of circle: %.2f\n", S);
 }
 
 float perimeter_circle(Circle* c)
