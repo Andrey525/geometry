@@ -35,12 +35,15 @@ void print_triangle(Triangle* t, FILE* f)
     printf(")\n");
 
     float a, b, c;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
-        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
-        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
-        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
+    pr1 = ((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x));
+    pr2 = ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y));
+    a = sqrt(pr1 + pr2);
+    pr1 = ((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x));
+    pr2 = ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y));
+    b = sqrt(pr1 + pr2);
+    pr1 = ((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x));
+    pr2 = ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y));
+    d = sqrt(pr1 + pr2);
 
     if ((((a + b) <= c) || ((a + c) <= b) || ((b + c) <= a))) {
         printf("Error: invalid triangle\n");
@@ -51,12 +54,15 @@ void print_triangle(Triangle* t, FILE* f)
 float perimeter_triangle(Triangle* t)
 {
     float a, b, c, P;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
-        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
-        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
-        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
+    pr1 = ((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x));
+    pr2 = ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y));
+    a = sqrt(pr1 + pr2);
+    pr1 = ((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x));
+    pr2 = ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y));
+    b = sqrt(pr1 + pr2);
+    pr1 = ((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x));
+    pr2 = ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y));
+    d = sqrt(pr1 + pr2);
     P = a + b + c;
     return P;
 }
@@ -64,13 +70,15 @@ float perimeter_triangle(Triangle* t)
 float area_triangle(Triangle* t)
 {
     float a, b, c, P, S, p;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
-        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
-        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
-        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
-    P = a + b + c;
+    pr1 = ((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x));
+    pr2 = ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y));
+    a = sqrt(pr1 + pr2);
+    pr1 = ((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x));
+    pr2 = ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y));
+    b = sqrt(pr1 + pr2);
+    pr1 = ((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x));
+    pr2 = ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y));
+    d = sqrt(pr1 + pr2);
     p = P / 2;
     S = sqrt(p * (p - a) * (p - b) * (p - c));
     return S;

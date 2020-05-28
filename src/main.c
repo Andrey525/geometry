@@ -23,12 +23,16 @@ int main()
 
     print_triangle(&t, f);
     float a, b, d;
-    a = sqrt(((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x))
-        + ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y)));
-    b = sqrt(((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x))
-        + ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y)));
-    d = sqrt(((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x))
-        + ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y)));
+    float pr1, pr2;
+    pr1 = ((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x));
+    pr2 = ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y));
+    a = sqrt(pr1 + pr2);
+    pr1 = ((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x));
+    pr2 = ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y));
+    b = sqrt(pr1 + pr2);
+    pr1 = ((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x));
+    pr2 = ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y));
+    d = sqrt(pr1 + pr2);
     if ((((a + b) > d) && ((a + d) > b) && ((b + d) > a))) {
         P = perimeter_triangle(&t);
         S = area_triangle(&t);
