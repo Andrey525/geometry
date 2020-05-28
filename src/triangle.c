@@ -15,7 +15,6 @@ void Vvod_Koordinat_triangle(Triangle* t)
 
 void print_triangle(Triangle* t, FILE* f)
 {
-
     fprintf(f, "Triangle(");
     for (int i = 1; i <= 4; ++i) {
         fprintf(f, "(%d;%d)", t->P[i].x, t->P[i].y);
