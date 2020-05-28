@@ -29,4 +29,4 @@ float perimeter_triangle(Triangle* t);
 float area_triangle(Triangle* t);
 void print_P_S_triangle(Triangle* t, float P, float S, FILE* f);
 
-void top_in_circle(Triangle* t, Circle* c, FILE* f);
+int top_in_circle(Triangle* t, Circle* c, FILE* f);
