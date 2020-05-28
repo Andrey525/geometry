@@ -35,9 +35,12 @@ void print_triangle(Triangle* t, FILE* f)
     printf(")\n");
 
     float a, b, c;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x)) + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x)) + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x)) + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
+    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
+        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
+    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
+        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
+    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
+        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
 
     if ((((a + b) <= c) || ((a + c) <= b) || ((b + c) <= a))) {
         printf("Error: invalid triangle\n");
@@ -48,9 +51,12 @@ void print_triangle(Triangle* t, FILE* f)
 float perimeter_triangle(Triangle* t)
 {
     float a, b, c, P;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x)) + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x)) + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x)) + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
+    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
+        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
+    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
+        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
+    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
+        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
     P = a + b + c;
     return P;
 }
@@ -58,9 +64,12 @@ float perimeter_triangle(Triangle* t)
 float area_triangle(Triangle* t)
 {
     float a, b, c, P, S, p;
-    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x)) + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
-    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x)) + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
-    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x)) + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
+    a = sqrt(((t->P[1].x - t->P[2].x) * (t->P[1].x - t->P[2].x))
+        + ((t->P[1].y - t->P[2].y) * (t->P[1].y - t->P[2].y)));
+    b = sqrt(((t->P[2].x - t->P[3].x) * (t->P[2].x - t->P[3].x))
+        + ((t->P[2].y - t->P[3].y) * (t->P[2].y - t->P[3].y)));
+    c = sqrt(((t->P[3].x - t->P[1].x) * (t->P[3].x - t->P[1].x))
+        + ((t->P[3].y - t->P[1].y) * (t->P[3].y - t->P[1].y)));
     P = a + b + c;
     p = P / 2;
     S = sqrt(p * (p - a) * (p - b) * (p - c));

@@ -23,9 +23,12 @@ int main()
 
     print_triangle(&t, f);
     float a, b, d;
-    a = sqrt(((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x)) + ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y)));
-    b = sqrt(((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x)) + ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y)));
-    d = sqrt(((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x)) + ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y)));
+    a = sqrt(((t.P[1].x - t.P[2].x) * (t.P[1].x - t.P[2].x))
+        + ((t.P[1].y - t.P[2].y) * (t.P[1].y - t.P[2].y)));
+    b = sqrt(((t.P[2].x - t.P[3].x) * (t.P[2].x - t.P[3].x))
+        + ((t.P[2].y - t.P[3].y) * (t.P[2].y - t.P[3].y)));
+    d = sqrt(((t.P[3].x - t.P[1].x) * (t.P[3].x - t.P[1].x))
+        + ((t.P[3].y - t.P[1].y) * (t.P[3].y - t.P[1].y)));
     if ((((a + b) > d) && ((a + d) > b) && ((b + d) > a))) {
         P = perimeter_triangle(&t);
         S = area_triangle(&t);
